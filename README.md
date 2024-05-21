@@ -128,3 +128,22 @@
 * `const 이름 = [{},{},{},……]`
 * `const 이름 = [{key:value, key:value,……},{},{},……]`
 * `const 이름 = [{key:[v1, v2], key:value},{},{},……]`
+---
+## BOM, DOM
+### BOM(Browser Object Model)
+* `window` 최상의 객체를 기준으로 속성, 메소드 이용
+* `window`는 웹브라우저 자체를 가르키기 때문에 생략가능하다.
+* 자주 사용하는 속성, 메소드 : `alert()`, `prompt()`, `confirm()`, `location()` 등
+* `window.alert();` or `alert();`
+### DOM(Document Object Model)
+`document` 본문 최상위 객체 대상으로 속성, 메소드 이용, 생략할 수 없다.
+#### DOM 선택 시 자주 사용하는 메소드(함수) 종류
+* `document.getElementsByTagName("태그명")`
+* `document.getElementsByClassName("클래스명")`
+* `document.getElementById("아이디명")`
+* `document.querySelector("태그명")`
+* `document.querySelector(".클래스명")`
+* `document.querySelector("#아이디명")`
+* `document.querySelectorAll(".클래스명")`
+* `document.querySelectorAll("#아이디명")`
+* `getElements...`와 `querySelectorAll` 함수는 `index`를 사용해서 대상을 선택하므로 사용 시 주의가 필요하다.
