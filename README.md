@@ -147,3 +147,47 @@
 * `document.querySelectorAll(".클래스명")`
 * `document.querySelectorAll("#아이디명")`
 * `getElements...`와 `querySelectorAll` 함수는 `index`를 사용해서 대상을 선택하므로 사용 시 주의가 필요하다.
+---
+## 가족관계선택속성
+* **`parentNode`, `parentElement`**
+* `header > nav` 관계 DOM이 있을 때 `nav`의 부모를 선택할 때 이용할 수 있다.
+* **`childNodes`, `children`**
+* `nav > li` 관계 DOM이 있을 때 `nav`의 자식인 `li`를 선택할 때 이용할 수 있다.
+* 요소 이외 노드까지 같이 출력이 되는 `parentNode`, `childNodes`
+* 요소만 필요할 시 `parentElement`, `children`
+* **`firstChild`, `firstElementChild`**
+*  첫번째 대상 선택
+* `firstChild` 공백포함 첫번째
+* `firstElementChild` 공백 미포함 첫번째 요소만 인식
+* **`lastChild`, `lastElementChild`**
+* 마지막 대상 선택
+* `lastChild` 공백포함 마지막
+* `lastElementChild` 공백 미포함 마지막 요소만 인식
+* **`nextSibling`, `nextElementSibling`**
+* 인접 다음형제 선택
+* `nextSibling` 공백포함 다음 형제
+* `nextElementSibling` 다음 형제 요소만 인식
+* **`previousSibling`, `previousElementSibling`**
+* 인접 이전형제 선택
+* `previousSibling` 공백포함 이전 형제
+* `previousElementSibling` 이전 형제 요소만 인식
+---
+## 자바스크립트 객체 속성
+* `innerHTML` : 객체.속성
+* element 안의 HTML이나 XML을 가져옵니다.
+* 자바스크립트로 HTML DOM 제작 시 HTML 읽기, 삽입, 수정 진행용으로 사용하는 속성
+* `<span>0</span>` -> `<em>1</em>`
+* `<span class="a">0</span>` -> `<span class="b">0</span>`
+* `innerText` : 객체.속성
+* element 안의 text 값들만을 가져옵니다.
+* `<span>0</span>` span태그가 아닌 단순 문자 0 값만 변경하려고 할때 사용하는 속성
+---
+## 자바스크립트 연산자
+* `=` : 대입연산자
+* `var a = 10`
+* 새로운 값이 대입되면 기존 값을 제거한다.
+* `a = 20` 최종 a 결과는 20
+* `+=` : 복합대입연산자
+* 새로운 값이 대입될 때 기존 값에 추가 대입된다
+* `var a = 10`
+* `a += 20` 최종 a 결과는 30 `a = a+20`

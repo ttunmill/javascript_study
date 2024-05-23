@@ -22,28 +22,30 @@
                     )
                 </label>
                 <a href="#" class="select_delete">선택삭제</a>
-                <div class="item_wrap">
-                    <div class="item">
+            </div>
+            <div class="item_wrap">
+                <div class="item">
+                    <div class="select">
                         <input type="checkbox" name="item_select" id="item_select">
-                        <label for="item_select"></label>
-                        <a class="item_info">
-                            <p><img src="#" alt=""></p>
-                            <div class="item_info_txt">
-                                <p>[남향푸드또띠아] 핫 치킨 브리또 2개입</p>
-                                <p>[남향푸드또띠아] 간편 브리또 15종 2개입 (택1)</p>
-                            </div>
-                        </a>
-                        <div class="quantity">
-                            <button type="button">-</button>
-                            <p class="quantity_num">1</p>
-                            <button type="button">+</button>
-                        </div>
-                        <div class="item_price">
-                            <p class="item_price_txt"></p>
-                            <p class="item_regular_price"><del>33,000원</del></p>
-                        </div>
-                        <button type="button" class="delete_item"></button>
+                        <!-- <label for="item_select"></label> -->
                     </div>
+                    <a href="#" class="item_info">
+                        <p class="img"><img src="https://product-image.kurly.com/cdn-cgi/image/width=120,height=156,fit=crop,quality=85/product/image/f814d3e5-11e8-4858-98bc-ce1eafd5bd1c.jpg" alt=""></p>
+                        <div class="item_info_txt">
+                            <h2>[남향푸드또띠아] 핫 치킨 브리또 2개입</h2>
+                            <p class="item_info_txt_detail">[남향푸드또띠아] 간편 브리또 15종 2개입 (택1)</p>
+                        </div>
+                    </a>
+                    <div class="quantity">
+                        <button type="button" id="minus">-</button>
+                        <input type="text" name="count" id="count" value="1">
+                        <button type="button" id="plus">+</button>
+                    </div>
+                    <div class="item_price">
+                        <p class="item_price_txt">24,500원</p>
+                        <p class="item_regular_price"><del>33,000원</del></p>
+                    </div>
+                    <a class="delete_item">X</a>
                 </div>
             </div>
         </div>
