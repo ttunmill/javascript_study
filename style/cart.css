@@ -105,10 +105,12 @@ main .cart_wrap .item_wrap .item .item_price .item_price_txt {
     font-size: 1.1rem;
     font-weight: bold;
 }
-main .cart_wrap .item_wrap .item .item_price .item_regular_price {color: #aaa;}
+main .cart_wrap .item_wrap .item .item_price .item_regular_price {
+    color: #aaa;
+    text-decoration: line-through;
+}
 
 main .cart_wrap .item_wrap .item .delete_item {
     text-align: center;
     cursor: pointer;
-    
 }
