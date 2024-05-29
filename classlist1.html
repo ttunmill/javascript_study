@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classlist1 │ JS</title>
+    <script src="./script/classlist.js" defer></script>
+    <style>
+        .set1 {
+            background-color: yellow;
+            border-top: 2px solid blue;
+        }
+        .set2 {color: red;} /* 공통 */
+        .set3 {display: none;}
+        #ip_security {
+            padding-top: 2.5px;
+            width: 60px;
+            height: 30px;
+            background-color: #aaa;
+            border: 0;
+            cursor: pointer;
+            text-align: left;
+            transition: background-color 0.1s;
+        }
+        #ip_security.on1 {background-color: #00ff00;}
+        #ip_security span {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #fff;
+            display: inline-block;
+            transition: all 0.1s;
+        }  
+        #ip_security span.on {transform: translateX(25px);}
+        .qa {}
+        .qa .q {
+            border-bottom: 1px dashed #aaa;
+            padding:  10px 15px;
+        }
+        .qa .a {
+            display: none;
+            background-color: #eee;
+            padding: 10px 15px;
+        }
+        .qa .a.on {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="qa">
+        <div class="q">질문1</div>
+        <div class="a">답변1</div>
+        <div class="q">질문2</div>
+        <div class="a">답변2</div>
+    </div>
+    <ul class="list">
+        <li>list 1</li>
+        <li>list 2</li>
+        <li>list 3</li>
+        <li>list 4</li>
+        <li>list 5</li>
+        <li>list 6</li>
+    </ul>
+    <hr>
+    <button type="button" id="ip_security">
+        <span></span>
+    </button>
+    
+</body>
+</html>
