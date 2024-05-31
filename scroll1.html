@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./script/scroll1.js" defer></script>
+    <style>
+        html, body {scroll-behavior: smooth;}
+        body {
+            height: 300vh;
+            background:linear-gradient(180deg, yellow, pink);
+        }
+        .btn {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+        }
+        .btn:nth-child(2) {left: 42px;}
+        .btn:nth-child(3) {left: 64px;}
+        /* bg */
+        .bg {
+            height: 500px;
+            border: 5px solid #000;
+        }
+        .bg1 {}
+        .bg2 {border-color: #0f0;}
+        .bg3 {border-color: #00f;}
+    </style>
+</head>
+<body>
+    <button type="button" class="btn">1</button>
+    <button type="button" class="btn">2</button>
+    <button type="button" class="btn">3</button>
+    <div class="bg bg1"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+</body>
+</html>
