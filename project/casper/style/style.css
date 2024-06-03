@@ -1,0 +1,146 @@
+/* ==========================header */
+header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70px; 
+    padding: 0 30px;
+    z-index: 999;
+    background-color: #fff;
+}
+header h1 {}
+header h1 a {}
+header h1 a img {
+    
+}
+/* ==========================header nav-desktop*/
+header > nav {}
+header > nav .sub_bg {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: 240px;
+    background-color: #fff;
+}
+header > nav .gnb {
+    /* 초기모습 수직 메뉴 이유 : li block */
+    /*  li 옆으로 배치하기 위해 부모 gnb -> flex */
+    display: flex;
+}
+header > nav .gnb > li {
+    /* 형제 구조 li -> width값 입력 시 글자수가 달라서 간격차이가 생기므로 여백으로 해결 */
+    margin-right: 100px;
+    position: relative;
+}
+header > nav .gnb > li:last-child {margin: 0;}
+header > nav .gnb > li > a {
+    display: block;
+    line-height: 40px;
+    font-weight: 700;
+}
+header > nav .gnb > li > .sub {
+    position: absolute;
+    top: 55px;
+    width: 100%;
+}
+header > nav .gnb > li > .sub li {}
+header > nav .gnb > li > .sub li a {
+    display: inline-block;
+    line-height: 30px;
+    white-space: nowrap;
+    font-size: 0.9rem;
+}
+header > nav .gnb > li > .sub li a img {width: 170px;}
+/* ==========================header nav-mobile*/
+header .lnb {}
+header .lnb .m_nav {display: none;} /* 모바일 메뉴 숨기기 */
+header .lnb .m_nav .all_nav {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+header .lnb .m_nav .all_nav img {width: 100%;}
+/* ==========================header 모바일 nav clone 디자인 */
+header .lnb {}
+header .lnb .m_nav nav {}
+header .lnb .m_nav nav .sub_bg {}
+header .lnb .m_nav nav .gnb {
+    position: fixed;
+    width: 60%;
+    height: 100%;
+    background-color: #fff;
+    padding: 50px;
+    top: 55px;
+    right: 0;
+}
+header .lnb .m_nav nav .gnb > li {
+    border-bottom: 1px solid #aaa;
+}
+header .lnb .m_nav nav .gnb > li a {
+    display: block;
+    line-height: 50px;
+}
+header .lnb .m_nav nav .gnb > li > .sub {display: none;}
+header .lnb .m_nav nav .gnb > li > .sub li {}
+header .lnb .m_nav nav .gnb > li > .sub a {}
+/* ==========================header lnb*/
+header .lnb {display: flex;}
+header .lnb .my_menu {}
+header .lnb .notice {background-position: right top;}
+header .lnb > a {
+    margin-left: 16px;
+    display: block;
+    background-image: url("../images/ico_header.png");
+    width: 20px;
+    height: 24px;
+}
+header .lnb > a span {display: none;}
+/* ==========================main*/
+main {}
+/* ==========================main visual*/
+main .visual {
+    padding-top: 70px;
+    position: relative;
+    height: calc(100vh - 70px); /* header(70px)높이를 뺀 만큼의 뷰포트크기 */
+    background-image: url("../images/visual.png");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+main .visual .txt {
+    margin-top: 50px;
+    color: #fff;
+    text-align: center;
+}
+main .visual .txt h1 {
+    margin-bottom: 20px;
+    font-size: 5rem;
+    font-weight: 700;
+}
+main .visual .txt p {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+main .visual .txt .link {}
+main .visual .txt .link a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #002c5f;
+    color: #fff;
+}
+main .visual .scroll {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 60px;
+    width: 48px;
+    height: 48px;
+    animation: move 1s ease alternate infinite;
+}
+main .visual .scroll img {
+    filter: invert(1);
+    width: 100%;
+}

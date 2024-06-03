@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타이머함수 │ js</title>
+    <script src="./script/timer1.js" defer></script>
+    <style>
+        .wrap {
+            /* 움직이는 슬라이드가 실제 보이는 영역 */
+            width: 500px;
+            height: 500px;
+            border: 10px solid red;
+            overflow: hidden;
+        }
+        .wrap .slide_container {
+            display: flex;
+            /* width: 1500px; */
+            width: max-content;
+            /* 자식 슬라이드들을 움직이는 대상 */
+            transform: translate(0); /* 초기 위치값 */
+            transition: transform 0.3s;
+        }
+        .wrap .slide_container .slide {
+            /* 개별 슬라이드 크기 */
+            width: 500px;
+            height: 500px;
+        }
+        .wrap .slide_container .slide1 {background: pink;}
+        .wrap .slide_container .slide2 {background: yellow;}
+        .wrap .slide_container .slide3 {background: lightgreen;}
+        
+    </style>
+</head>
+<body>
+    <!-- 배너 슬라이드 구조 제작 시 주의사항 -->
+    <!-- 가족관계 태그 구성 지키기! -->
+    <!-- 묶음1(슬라이드묶음1(배너슬라이드 2개 이상)) -->
+    <div class="wrap">
+        <div class="slide_container">
+            <div class="slide slide1">1</div>
+            <div class="slide slide2">2</div>
+            <div class="slide slide3">3</div>
+        </div>
+    </div>
+</body>
+</html>
