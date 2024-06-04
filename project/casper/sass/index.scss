@@ -199,4 +199,23 @@ main {
             }
         }
     }//advantage end
+    .design {
+        position: relative;
+        @include pad_lay;
+        padding: 100px 0;
+        text-align: center;
+        h1 {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            font-size: 15rem;
+            font-weight: 900;
+            color: $fcDDD;
+            z-index: -1;
+        }
+        .photo {
+            img {}
+        }
+    }//design end
 }//main end

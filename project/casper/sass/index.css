@@ -41,7 +41,6 @@ header nav .gnb > li .sub {
   position: absolute;
   width: 100%;
   top: 55px;
-  width: -moz-max-content;
   width: max-content;
 }
 header nav .gnb > li .sub > li > a {
@@ -212,4 +211,22 @@ main .advantage .contents a h2 em {
   font-size: 0.9rem;
   color: #fff;
   background-color: #002c5f;
-}/*# sourceMappingURL=index.css.map */
+}
+main .design {
+  position: relative;
+  padding: 50px 30px;
+  padding: 100px 0;
+  text-align: center;
+}
+main .design h1 {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  font-size: 15rem;
+  font-weight: 900;
+  color: #ddd;
+  z-index: -1;
+}
+
+/*# sourceMappingURL=index.css.map */
