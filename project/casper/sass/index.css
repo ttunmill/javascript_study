@@ -1,0 +1,215 @@
+header {
+  position: fixed;
+  z-index: 999;
+  background-color: #fff;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+}
+header h1 a img {
+  width: 100%;
+}
+header nav .sub_bg {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: 240px;
+  background-color: #fff;
+}
+header nav .gnb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav .gnb > li {
+  position: relative;
+  margin-right: 100px;
+}
+header nav .gnb > li:last-child {
+  margin: 0;
+}
+header nav .gnb > li > a {
+  display: block;
+  line-height: 40px;
+  font-weight: 700;
+}
+header nav .gnb > li .sub {
+  position: absolute;
+  width: 100%;
+  top: 55px;
+  width: -moz-max-content;
+  width: max-content;
+}
+header nav .gnb > li .sub > li > a {
+  display: block;
+  line-height: 30px;
+  font-size: 0.9rem;
+}
+header nav .gnb > li .sub > li > a img {
+  display: inline-block;
+  width: 170px;
+}
+header .lnb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .lnb .m_nav {
+  display: none;
+}
+header .lnb .m_nav .all_nav img {
+  width: 24px;
+  height: 24px;
+}
+header .lnb .m_nav nav {
+  position: fixed;
+  right: 0;
+  top: 70px;
+  width: 60%;
+  height: calc(100vh - 70px);
+  background-color: #fff;
+}
+header .lnb .m_nav nav .sub_bg {
+  display: none;
+}
+header .lnb .m_nav nav .gnb {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 50px;
+}
+header .lnb .m_nav nav .gnb > li {
+  margin: 0;
+  width: 100%;
+}
+header .lnb .m_nav nav .gnb > li > a {
+  display: block;
+  border-bottom: 1px solid #aaa;
+}
+header .lnb .m_nav nav .gnb > li .sub {
+  width: 100%;
+  position: unset;
+}
+header .lnb .m_nav nav .gnb > li .sub li {
+  border-bottom: 1px dashed #ddd;
+}
+header .lnb .m_nav nav .gnb > li .sub li a {
+  display: block;
+  padding: 10px 0;
+  line-height: 30px;
+  width: 100%;
+}
+header .lnb .my_menu, header .lnb .notice {
+  display: inline-block;
+  width: 20px;
+  height: 24px;
+  background-image: url("../images/ico_header.png");
+  background-repeat: no-repeat;
+  margin-left: 16px;
+}
+header .lnb .my_menu span, header .lnb .notice span {
+  display: none;
+}
+header .lnb .notice {
+  background-position: right top;
+}
+
+main {
+  padding-top: 70px;
+}
+main .visual {
+  position: relative;
+  background-image: url("../images/visual.png");
+  background-position: center;
+  background-attachment: fixed;
+  height: calc(100vh - 70px);
+}
+main .visual .txt {
+  padding-top: 50px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+main .visual .txt h1, main .visual .txt p {
+  margin-bottom: 20px;
+  color: #fff;
+}
+main .visual .txt h1 {
+  font-size: 5rem;
+  font-weight: 700;
+}
+main .visual .txt .link a {
+  display: inline-block;
+  color: #fff;
+  padding: 10px 20px;
+  background-color: #002c5f;
+}
+main .visual .scroll {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 48px;
+  height: 48px;
+  animation: move 1s infinite alternate ease;
+}
+main .visual .scroll img {
+  display: inline-block;
+  width: 100%;
+  filter: invert(1);
+}
+main .advantage {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 30px;
+  width: 100%;
+}
+main .advantage .title {
+  margin-bottom: 10px;
+  width: 400px;
+}
+main .advantage .title h1 {
+  margin-bottom: 10px;
+  line-height: 1.2;
+  font-size: 2.5rem;
+}
+main .advantage .title h1 em {
+  font-weight: 700;
+}
+main .advantage .title p {
+  font-size: 1.3rem;
+  line-height: 1.3;
+  color: #888;
+}
+main .advantage .contents {
+  display: flex;
+  padding: 10px 0;
+  width: calc(100% - 400px);
+  overflow-y: hidden;
+}
+main .advantage .contents a {
+  margin: 0 10px;
+}
+main .advantage .contents a .photo {
+  margin-bottom: 10px;
+}
+main .advantage .contents a .photo + p {
+  margin-bottom: 5px;
+}
+main .advantage .contents a h2 {
+  font-size: 1.3rem;
+  line-height: 1.3;
+  color: #888;
+  color: #002c5f;
+}
+main .advantage .contents a h2 em {
+  display: inline-block;
+  margin-left: 5px;
+  padding: 5px;
+  font-size: 0.9rem;
+  color: #fff;
+  background-color: #002c5f;
+}/*# sourceMappingURL=index.css.map */

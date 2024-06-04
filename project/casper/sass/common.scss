@@ -1,0 +1,47 @@
+// $변수, @mixin 스타일 규칙 모음
+// 1. 원본(style.css) 파일 중 반복되는 속성 값을 변수로 만들기
+// 2. (위) 기준 반복되는 스타일 규칙 2개 이상을 @mixin 만들기
+
+$main_color : #002c5f;
+$display_n : none;
+$display_ib : inline-block;
+$display_b : block;
+$wid100 : 100%;
+$bgW : #fff;
+$taC : center;
+$fwB : 700;
+$fcW : #fff;
+$fc888 : #888;
+$fcAAA : #aaa;
+$fcDDD : #ddd;
+@mixin pad_lay {padding: 50px 30px;}
+@mixin header_lnb_img {
+    display: $display_ib;
+    width: 20px;
+    height: 24px;
+    background-image: url("../images/ico_header.png");
+    background-repeat: no-repeat;
+}
+@mixin flex_style {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin pst_ab {
+    position: absolute;
+    width: 100%;
+}
+@mixin main_link_btn {
+    color: $fcW;
+    padding: 10px 20px;
+    background-color: $main_color;
+}
+@mixin title_level1 {
+    line-height: 1.2;
+    font-size: 2.5rem;
+}
+@mixin title_level2 {
+    font-size: 1.3rem;
+    line-height: 1.3;
+    color: #888;
+}

@@ -1,0 +1,202 @@
+@import "common";
+//common.scss 변수 및 mixin 이용해서 중첩 선택자 규칙으로 디자인만들기
+
+// =============================== header
+header {
+    position: fixed;
+    z-index: 999;
+    background-color: $bgW;
+    width: $wid100;
+    height: 70px;
+    @include flex_style;
+    padding: 0 30px;
+    h1 {
+        a {
+            img {width: $wid100}
+        }
+    }
+    nav {
+        .sub_bg {
+            position: absolute;
+            top: 70px;
+            left: 0;
+            width: $wid100;
+            height: 240px;
+            background-color: $bgW;
+        }
+        .gnb {
+            @include flex_style;
+            > li {
+                position: relative;
+                margin-right: 100px;
+                &:last-child {margin: 0}
+                > a {
+                    display: $display_b;
+                    line-height: 40px;
+                    font-weight: $fwB;
+                }
+                .sub {
+                    @include pst_ab;
+                    top: 55px;
+                    width: max-content;
+                    > li {
+                        > a {
+                            display: $display_b;
+                            line-height: 30px;
+                            font-size: 0.9rem;
+                            img {
+                                display: $display_ib;
+                                width: 170px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .lnb {
+        @include flex_style;
+        .m_nav {
+            display: $display_n;
+            .all_nav {
+                img {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+            nav {
+                position: fixed;
+                right: 0;
+                top: 70px;
+                width: 60%;
+                height: calc(100vh - 70px);
+                background-color: $bgW;
+                .sub_bg {display: $display_n;}
+                .gnb {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding: 50px;
+                    > li {
+                        margin: 0;
+                        width: 100%;
+                        > a {
+                            display: block;
+                            border-bottom: 1px solid $fcAAA;
+                        }
+                        .sub {
+                            width: 100%;
+                            position: unset;
+                            li {
+                                border-bottom: 1px dashed $fcDDD;
+                                a {
+                                    display: block;
+                                    padding: 10px 0;
+                                    line-height: 30px;
+                                    width: 100%;
+                                    img {}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .my_menu, .notice {
+            @include header_lnb_img;
+            margin-left: 16px;
+            span {display: $display_n;}
+        }
+        .notice {
+            background-position: right top;
+        }
+    }
+}
+// =============================== main
+main {
+    padding-top: 70px;
+    .visual {
+        position: relative;
+        background-image: url("../images/visual.png");
+        background-position: center;
+        background-attachment: fixed;
+        height: calc(100vh - 70px);
+        .txt {
+            padding-top: 50px;
+            font-size: 1.2rem;
+            text-align: $taC;
+            h1, p {
+                margin-bottom: 20px;
+                color: $fcW;
+            }
+            h1 {
+                font-size: 5rem;
+                font-weight: $fwB;
+            }
+            .link {
+                a {
+                    display: $display_ib;
+                    @include main_link_btn
+                }
+            }
+        }
+        .scroll {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translate(-50%);
+            width: 48px;
+            height: 48px;
+            animation: move 1s infinite alternate ease;
+            img {
+                display: $display_ib;
+                width: $wid100;
+                filter: invert(1);
+            }
+        }
+    }//visual end
+    .advantage {
+        display: flex;
+        justify-content: space-between;
+        @include pad_lay;
+        width: 100%;
+        .title {
+            margin-bottom: 10px;
+            width: 400px;
+            h1 {
+                margin-bottom: 10px;
+                @include title_level1;
+                em {font-weight: $fwB;}
+            }
+            p {
+                @include title_level2;
+            }
+        }
+        .contents {
+            display: flex;
+            padding: 10px 0;
+            width: calc(100% - 400px);
+            overflow-y: hidden;
+            a {
+                margin: 0 10px;
+                .photo {
+                    margin-bottom: 10px;
+                    img {}
+                }
+                .photo+p {margin-bottom: 5px;}
+                h2 {
+                    @include title_level2;
+                    color: $main_color;
+                    em {
+                        display: inline-block;
+                        margin-left: 5px;
+                        padding: 5px;
+                        font-size: 0.9rem;
+                        color: $fcW;
+                        background-color: $main_color;
+                    }
+                }
+            }
+        }
+    }//advantage end
+}//main end

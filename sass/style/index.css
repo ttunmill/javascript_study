@@ -1,0 +1,28 @@
+header {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 255, 0, 0.5);
+}
+header h1 {
+  border: 2px dashed rgb(255, 0, 0);
+  padding: 20px;
+}
+header h1 a {
+  color: rgb(255, 0, 0);
+  font-size: 1rem;
+}
+header nav {
+  background-color: #f0c;
+}
+header nav a {
+  color: rgb(255, 0, 0);
+  font-weight: 700;
+}
+header .side, header .side h2, header .side h2 a {
+  display: inline-block;
+}
+header .side h2 a {
+  color: rgb(255, 0, 0);
+}/*# sourceMappingURL=index.css.map */

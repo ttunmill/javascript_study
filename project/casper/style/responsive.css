@@ -2,9 +2,12 @@
 /* 데스크탑 메뉴 숨기기 */
 /* 모바일 메뉴(햄버거 스타일 보이기) */
 @media screen and (max-width:1200px) {
-    
-}
-@media screen and (max-width:1000px) {
     header > nav {display: none;}
     header .lnb .m_nav {display: block;}
+}
+@media screen and (max-width:1000px) {
+    main .advantage {
+        flex-direction: column;
+    }
+    main .advantage .contents {width: 100%;}
 }

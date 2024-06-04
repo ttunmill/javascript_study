@@ -1,0 +1,44 @@
+// header h1 a {속성 : 값;} // css기본작성방식
+// scss(sass) 작성 방식
+// 선택자마다 부모 선택자를 반복해서 작성하지 않는다.
+// scss 파일 작성 후 css파일로 컴파일 하는 명령어
+// npx sass (scss파일명) (css파일명)
+// npx sass index.scss index.css
+
+//디자인 변수 생성
+//변수만 모인 파일을 별도의 scss로 관리가능하다.
+//변수파일을 별도의 scss 제작했을 땐 반드시 @import로 해당 파일을 불러와야 한다!!
+//@import "불러올 scss 파일명";
+@import "common"; //확장자 생략가능
+
+//디자인 선택자 및 변수 적용
+header {
+    @include flex-c;
+    background-color: $bg-color2;
+    h1{
+        border: $br1 $br-m $font-color;
+        padding: 20px;
+        a {
+            color : $font-color;
+            font-size: 1rem;
+        }
+    }
+    nav {
+        background-color: $bg-color;
+        a {
+            color : $font-color; 
+            font-weight: 700;
+        }
+    }
+    .side {
+        display: inline-block;
+        h2 {
+            @extend .side;
+            a {
+                @extend h2;
+                color: $font-color;
+                img {}
+            }
+        }
+    }
+}
