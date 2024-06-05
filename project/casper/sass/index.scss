@@ -39,6 +39,7 @@ header {
                     @include pst_ab;
                     top: 55px;
                     width: max-content;
+                    overflow: hidden;
                     > li {
                         > a {
                             display: $display_b;

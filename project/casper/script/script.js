@@ -9,23 +9,48 @@ const m_gnb_sub = nav_clone.querySelectorAll(" .gnb > li > .sub")
 console.log(m_gnb_li, m_gnb_sub) //복제대상 붙여넣기 부모
 
 //모든 서브, 서브배경 숨기기
-for(var i of sub) {i.style.display = "none"}
-sub_bg.style.display = "none"
+// for(var i of sub) {i.style.display = "none"}
+// sub_bg.style.display = "none"
 
 //m_nav 모바일 전용 메뉴의 기존 네비게이션 태그 마지막 자식 복붙
 m_nav.appendChild(nav_clone)
 
 //m_nav 출력
-nav_clone.style.display = "none"
+nav_clone.style.transform = "translateX(100%)"
 m_nav.addEventListener("click", () => {
-    nav_clone.style.display = "block"
+    if(nav_clone.style.right != "0") {
+        nav_clone.style.right = "60%"
+    } else {
+        nav_clone.style.right = "0"
+    }
+    
 })
 
-
+nav_clone.style.transition = "all 0.3s"
 for(var i of m_gnb_sub) {i.style.display = "none"}
 m_gnb_li.forEach(function(index, number) {
     m_gnb_li[number].addEventListener("click", () => {
         for(var i of m_gnb_sub) {i.style.display = "none"}
         m_gnb_sub[number].style.display = "block"
     })
+})
+
+//메뉴에 마우스 올리면 서브 메뉴 나타나기(높이 길어지는 효과)
+//height + transition + overflow
+//1. 숨기는 처리를 display가 아닌 height 값으로 재설정 = 0
+sub_bg.style.height = "0";
+sub_bg.style.transition = "all 0.3s"
+for(var i of sub) {i.style.transition = "all 0.3s";}
+for(var i of sub) {
+    i.style.height = "0"; 
+    i.style.overflow = "hidden";
+}
+//2. 메뉴 마우스 올리면 서브, 서브배경 보이기
+nav.addEventListener("mouseover", () => {
+    for(var i of sub) {i.style.height = "240px";}
+    sub_bg.style.height = "240px";
+})
+nav.addEventListener("mouseout", () => {
+    for(var i of sub) {i.style.height = "0";}
+    sub_bg.style.height = "0"
 })

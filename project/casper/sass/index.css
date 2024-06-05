@@ -42,6 +42,7 @@ header nav .gnb > li .sub {
   width: 100%;
   top: 55px;
   width: max-content;
+  overflow: hidden;
 }
 header nav .gnb > li .sub > li > a {
   display: block;
