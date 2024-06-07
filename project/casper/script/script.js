@@ -5,6 +5,7 @@ const nav_clone = nav.cloneNode(true) //nav복제 변수
 const m_nav = document.querySelector(".m_nav")
 const m_gnb_li = nav_clone.querySelectorAll(" .gnb > li")
 const m_gnb_sub = nav_clone.querySelectorAll(" .gnb > li > .sub")
+const all_m_nav = m_nav.querySelector(".all_nav")
 //console.log(sub, sub_bg, nav, nav_clone, m_nav, m_gnb_li, m_gnb_sub) //복제대상 붙여넣기 부모
 console.log(m_gnb_li, m_gnb_sub) //복제대상 붙여넣기 부모
 
@@ -15,15 +16,19 @@ console.log(m_gnb_li, m_gnb_sub) //복제대상 붙여넣기 부모
 //m_nav 모바일 전용 메뉴의 기존 네비게이션 태그 마지막 자식 복붙
 m_nav.appendChild(nav_clone)
 
-//m_nav 출력
+
 nav_clone.style.transform = "translateX(100%)"
-m_nav.addEventListener("click", () => {
-    if(nav_clone.style.right != "0") {
+let flag = false;
+all_m_nav.addEventListener("click", () => {
+    flag = !flag;
+    if(flag == true) {
         nav_clone.style.right = "60%"
+        // console.log(flag)
     } else {
         nav_clone.style.right = "0"
+        for(var i of m_gnb_sub) {i.style.display = "none"}
+        // console.log(flag)
     }
-    
 })
 
 nav_clone.style.transition = "all 0.3s"
@@ -54,3 +59,4 @@ nav.addEventListener("mouseout", () => {
     for(var i of sub) {i.style.height = "0";}
     sub_bg.style.height = "0"
 })
+

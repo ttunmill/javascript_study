@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter-1 │ JS</title>
+    <link rel="stylesheet" href="./style/reset.css">
+    <!-- countUp 필수플러그인 연결 -->
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js">	</script>
+    <style>
+        main {height: 100vh; background: gray;}
+        .counter {
+            height: 50vh;
+            text-align: center;
+            font-size: 5rem;
+            line-height: 1.2;
+        }
+    </style>
+</head>
+<body>
+    <main></main>
+    <div class="counter">
+        <span>512,345회</span><br>
+        <span>12,512,345 downloads</span><br>
+    </div>
+    <span class="counter2">123,456원</span>
+    <script>
+        const counterUp = window.counterUp.default
+        const callback = entries => {
+            entries.forEach( entry => {
+                const el = entry.target
+                if ( entry.isIntersecting && ! el.classList.contains( 'is-visible' ) ) {
+                    counterUp( el, {
+                        duration: 1000,
+                        delay: 16,
+                    } )
+                    el.classList.add( 'is-visible' )
+                }
+            } )
+        }
+
+        const IO = new IntersectionObserver( callback, { threshold: 1 } )
+
+        const el = document.querySelector('.counter')
+        const el2 = document.querySelector('.counter2')
+        IO.observe( el )
+        IO.observe( el2 )
+    </script>
+</body>
+</html>

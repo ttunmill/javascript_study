@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>full-1 │ JS</title>
+    <link rel="stylesheet" href="./style/reset.css">
+    <!-- fullpage 플러그인(구) 제이쿼리 라이브러리 연결 필수!! -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- fullpage 플러그인(구) 연결 필수!-->
+    <link rel="stylesheet" href="./style/jquery.fullPage.css">
+    <script src="./script/jquery.fullPage.js"></script>
+    <style>
+        /* fullpage 플러그인 적용 시 각 .section 대상들을 height값을 적용 안해도 100vh만큼 기본으로 인식한다 */
+        #wrap .section {font-size: 10rem;}
+        #wrap .s1 {background: crimson;}
+        #wrap .s2 {
+            background: orangered; 
+            height: 500px !important;
+            /* 기본 100vh가 아닌 다른 높이값 적용 시 높이값 한칸 띄고 !improtant 우선순위 속성 적용하고, 해당 태그위치에 추가 클래스로 "fp-auto-height" 설정하기! */
+        }
+        #wrap .s3 {background: yellowgreen;}
+        #wrap .s4 {background: limegreen;}
+        /* nav */
+        nav {
+            position: fixed;
+            left: 30px;
+            top: 30px;
+            z-index: 999;
+        }
+        nav a {
+            display: inline-block;
+            padding: 10px 20px;
+            border-bottom : 2px solid #000;
+        }
+        .ani {animation: move 2s 0.5s both;}
+        @keyframes move {
+            0% {opacity: 0; transform: translateX(0);}
+            100% {opacity: 1; transform: translateX(300px);}
+        }
+    </style>
+</head>
+<body>
+    <!-- 네비게이션 태그는 자유설정(a 필수!) -->
+    <nav>
+        <a href="#intro">소개</a>
+        <a href="#special">특징</a>
+        <a href="#project">프로젝트</a>
+        <a href="#contact">연락처</a>
+    </nav>
+    <!-- fullpage 태그 규칙 지키기! -->
+    <div id="wrap"><!-- 부모이름 자유 -->
+        <div class="section s1">1</div><!-- section 클래스명 필수 -->
+        <div class="section s2 fp-auto-height">2</div><!-- 추가 클래스 자유 -->
+        <div class="section s3"><h1>3</h1></div><!-- 자식, 자손 태그 자유 -->
+        <div class="section s4">4</div>
+    </div>
+    <script>
+        // fullpage js 플러그인 연결 필수!
+        $("#wrap").fullpage({
+            scrollBar : true, 
+            scrollingSpeed : 500,
+            // nav
+            navigation : true,
+            navigationTooltips : ["소개", "특징", "프로젝트", "연락처"],
+            showActiveTooltip : true,
+            menu : "nav",
+            anchors : ["intro","special","project","contact"],
+            //fullpage는 scrollTrigger와 함께 이용 불가
+            //fullpage(구) 제이쿼리 기능으로 애니메이션도 제이쿼리로 연결해야한다.
+            onLeave : function(index, nextIndex, direction) {
+                console.log(index, nextIndex, direction)
+                if(index == 2) {
+                    $(".s3 h1").css("color", "blue")
+                    //$(".s3 h1").addClass("animation class 입력")
+                    $(".s3 h1").addClass("ani")
+                }
+            },
+        })
+    </script>
+</body>
+</html>

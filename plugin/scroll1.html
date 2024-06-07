@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scroll-1 │ JS</title>
+    <link rel="stylesheet" href="./style/reset.css">
+    <!-- 스크롤트리거 플러그인 연결 주소(필수) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+
+    <style>
+        main {}
+        main section {
+            height: 100vh;
+            text-align: center;
+            font-size: 5rem;
+            background-color: beige;
+        }
+        main .s2 {background-color: limegreen;}
+        main section img {
+            width: 800px;
+            opacity: 0; /* trigger 애니메이션 초기값 설정 */
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="s1">1</section>
+        <section class="s2">
+            <img src="https://media.istockphoto.com/id/1945003328/ko/%EC%82%AC%EC%A7%84/%ED%91%B8%EB%A5%B8-%EB%AC%BC%EA%B2%B0-%EC%B6%94%EC%83%81-%EB%98%90%EB%8A%94-%EC%9E%94%EB%AC%BC%EA%B2%B0-%EB%AC%BC-%EC%A7%88%EA%B0%90-%EB%B0%B0%EA%B2%BD%EC%9E%85%EB%8B%88%EB%8B%A4-%EC%A0%9C%ED%92%88-%EC%A0%84%EC%8B%9C%EB%A5%BC-%EC%9C%84%ED%95%9C-%EB%B0%B1%EC%83%89-%EC%97%B0%EB%8B%A8.jpg?s=1024x1024&w=is&k=20&c=P7PjfbTrFOMm4h89qyjIMzbFjD9C9zPi4vnFKaxwf1A=" alt="">
+        </section>
+        <section class="s3">3</section>
+        <section class="s4">
+            <img src="https://images.unsplash.com/photo-1717501218385-55bc3a95be94?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+        </section>
+    </main>
+    <script>
+        //gsap.to("적용대상", {scrollTrigger : "뷰포트인식대상"})
+        //gsap.to(대상, {옵션:값, 옵션:값})
+        gsap.to(".s2 img", {
+            scrollTrigger : ".s2", //.s2가 보일때
+            duration : 1, //1초
+            x : 300,
+            y : 200,
+            delay : 0.5,
+            borderRadius : 50,
+            scale : 0.8,
+            opacity : 1,
+            yoyo: true,
+        })
+        gsap.to(".s4 img", {
+            scrollTrigger : ".s4",
+            yoyo: true,
+            duration : 2,
+            y : -500,
+            scale : 0.5,
+            boxShadow: "0px 0px 20px 20px black",
+            opacity : 1,
+            repeat : 1,
+        })
+    </script>
+</body>
+</html>
